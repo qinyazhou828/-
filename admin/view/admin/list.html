@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css">
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<form action="">
+    <a href="create"><button type="button" class="btn btn-primary">添加优惠券</button></a>
+</form>
+<form action="read" >
+    <select name="whether">
+        <option value="">是否有效</option>
+        <option value="1">有效</option>
+        <option value="0">无效</option>
+    </select>
+    <select name="type">
+        <option value="">类型</option>
+        <option value="通用券">通用券</option>
+        <option value="品类券">品类券</option>
+        <option value="商品券">商品券</option>
+    </select>
+    <input type="text" name="name" placeholder="请输入优惠券名称">
+    <input type="submit" value="搜索">
+</form>
+    <table class="table">
+        <tr>
+            <th>优惠券名称</th>
+            <th>优惠券类型</th>
+            <th>优惠券面值</th>
+            <th>优惠券最低消费</th>
+            <th>优惠券有效期限</th>
+            <th>排序</th>
+            <th>是否有效</th>
+            <th>添加时间</th>
+            <th>操作</th>
+        </tr>
+        {foreach $arr as $k=>$v}
+        <tr>
+            <td>{$v.name}</td>
+            <td>{$v.type}</td>
+            <td>{$v.face}</td>
+            <td>{$v.price}</td>
+            <td>{$v.time}</td>
+            <td>{$v.sort}</td>
+            <td>{$v.whether==1?'√':'×'}</td>
+            <td>{$v.create_time}</td>
+            <td><select name="">
+                <option value="">操作</option>
+                <option value=""><a href="delete?id={$v.id}">删除</a></option>
+            </select></td>
+        </tr>
+        {/foreach}
+    </table>
+{$arr|raw}
+</body>
+</html>

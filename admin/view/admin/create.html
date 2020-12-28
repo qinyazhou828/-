@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<form action="save" method="post">
+    <p>优惠券名称：<input type="text" name="name" placeholder="请输入优惠券名称"></p>
+    <p>优惠券类型：<select name="type">
+        <option value="">类型</option>
+        <option value="通用券">通用券</option>
+        <option value="品类券">品类券</option>
+        <option value="商品券">商品券</option>
+    </select></p>
+    <p>优惠券面值：<input type="number" name="face" value="0"></p>
+    <p>最低消费：<input type="number" name="price" placeholder="请输入最低消费"></p>
+    <p>有效期期限：<input type="text" name="time" placeholder="请输入有效期限"></p>
+    <p>排序：<input type="number" name="sort" placeholder="请输入排序"></p>
+    <p>
+        状态：
+        <input type="radio" name="whether" checked>开启
+        <input type="radio" name="whether">关闭
+    </p>
+    <p><input type="submit" value="提交"></p>
+</form>
+</body>
+</html>
